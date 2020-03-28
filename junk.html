@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>amateur de tout</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+
+
+<div class="container row">
+<div id="nav" class="three columns">
+<div class="logo">
+<a href="index.html"><img class="u-max-full-width" src="logo.jpg" alt="amateur de tout 모든 것의 애호가"></a>
+</div>
+
+<div class="menu">
+<ul>
+  <li>
+	projects by chances
+    <ul>
+      <li><a href="sin.html">a rapid sin</a></li>
+      <li class=active-item><a href="junk.html">pieces of junk</a></li>
+      <li><a href="habitue.html">habitué</a></li>
+    </ul>
+  </li>
+
+  <li>
+	documenting some unusual days
+    <ul>
+      <li><a href="190411.html">2019.04.11.</a></li>
+    </ul>
+  </li>
+  <li>
+        miscellaneous
+    <ul>
+      <li><a href="rand.html">random</a></li>
+      <li><a href="https://www.instagram.com/caglaz.one/">caglaz.one(ig)</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+<div id="content" class="nine columns"> 
+
+<div class="carousel" id="slider"> 
+  <div class="carousel-wrapper"> 
+    
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(1)"><img src="./items/junk/1.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox('2-1')"><img src="./items/junk/2.jpg"></a>
+    </div>
+      </div>
+  <div class="navi-wrapper"></div>
+</div>
+
+<div class="notes"> 
+  <h3 class="title">pieces of junk(2015)
+</h3>
+  <h6 class="desc">두 평쯤 되었을까, 작은 사무실에서 일한 적이 있다. 사무실을 혼자 지켰고, 경리 업무가 대부분이었다. 주기적으로 책자를 편집했고 이따금 작은 행사를 준비했다. 무언가 결정하거나 만들어내야 할 일은 적었다.
+
+두 해를 일했다. 사무실에서 한 일들 중 유일하게 가치 있었던 것은, 사무실에서 혹은 주변에서 나온 폐지를 재활용하는 것이었다. 사람들이 버린 종이들을 주워다 철침을 제거하고 이면지로 썼다. 일부는 업무에 쓰였고 일부는 개인적인 일에 쓰였다. 두 해를 꼬박 모았지만 철침은 얼마 되지 않았다.
+</h6>
+</div>
+
+<script src="./carousel.min.js" type="text/javascript"></script>
+
+<script> new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 }); </script>
+
+<script> window.onresize = function() { 
+  new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 });
+  console.log('resized'); }; </script>
+  
+<script>
+  function lightbox(img) {
+  document.getElementById("lightboximg").style.backgroundImage='url(./items/junk/'+img+'.jpg)';
+  document.getElementById("lightbox").style.display='block';
+  }
+  function lightboxoff() {
+  document.getElementById("lightbox").style.display='none';
+  }
+</script>
+
+</div>
+</div>
+
+
+<div id="lightbox" class="lightbox">
+<a href="#" onClick="lightboxoff()"><div id="lightboximg"></div></a>
+</div>

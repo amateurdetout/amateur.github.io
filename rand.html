@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>amateur de tout</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+
+
+<div class="container row">
+<div id="nav" class="three columns">
+<div class="logo">
+<a href="index.html"><img class="u-max-full-width" src="logo.jpg" alt="amateur de tout 모든 것의 애호가"></a>
+</div>
+
+<div class="menu">
+<ul>
+  <li>
+	projects by chances
+    <ul>
+      <li><a href="sin.html">a rapid sin</a></li>
+      <li><a href="junk.html">pieces of junk</a></li>
+      <li><a href="habitue.html">habitué</a></li>
+    </ul>
+  </li>
+
+  <li>
+	documenting some unusual days
+    <ul>
+      <li><a href="190411.html">2019.04.11.</a></li>
+    </ul>
+  </li>
+  <li>
+        miscellaneous
+    <ul>
+      <li class=active-item><a href="rand.html">random</a></li>
+      <li><a href="https://www.instagram.com/caglaz.one/">caglaz.one(ig)</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+<div id="content" class="nine columns"><div #id="randwrapper" class=u-max-full-width>
+<span id="randtop" class="row"><span id="randnum" class="u-pull-left"></span> <span class="u-pull-right"><a id="linktoimg" href="">link to this page</a></span></span>
+<a onclick="lightbox()" href="#" onClick=""><img class="u-full-width" id="randimg"></a>
+<h6 id="randdesc"></h6>
+</div>
+<script>
+var path = 'items/rand/';
+var numf = 6;
+var r = Math.floor(Math.random()*numf)
+
+function readDescRead(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                document.getElementById('randdesc').innerHTML = rawFile.responseText
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+function sncheck(param) { 
+  var returnValue; 
+  var url = location.href; 
+  var parameters = (url.slice(url.indexOf('?') + 1, url.length)).split('&'); 
+  for (var i = 0; i < parameters.length; i++) { 
+    var varName = parameters[i].split('=')[0]; 
+    if (varName.toUpperCase() == param.toUpperCase()) { returnValue = parameters[i].split('=')[1]; 
+    return decodeURIComponent(returnValue); } 
+    } 
+  };
+
+var sn = sncheck('n')
+sn *= 1
+
+if (Number.isInteger(sn) && sn >= 0 && sn <= numf) { r = sn; }
+
+document.getElementById('randnum').innerHTML=r+"/"+numf;
+document.getElementById('linktoimg').href="http://adtout.github.io/rand.html?n="+r;
+document.getElementById('randimg').src=path+r+'.jpg';
+readDescRead(path+r+'.t');
+
+function lightbox() {
+  document.getElementById("lightboximg").style.backgroundImage='url(items/rand/'+r+'.jpg)';
+  document.getElementById("lightbox").style.display='block';
+  }
+  function lightboxoff() {
+  document.getElementById("lightbox").style.display='none';
+  }
+  
+</script>
+
+</div>
+</div>
+
+
+<div id="lightbox" class="lightbox">
+<a href="#" onClick="lightboxoff()"><div id="lightboximg"></div></a>
+</div>

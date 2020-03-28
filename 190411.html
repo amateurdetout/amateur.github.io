@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>amateur de tout</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+
+
+<div class="container row">
+<div id="nav" class="three columns">
+<div class="logo">
+<a href="index.html"><img class="u-max-full-width" src="logo.jpg" alt="amateur de tout 모든 것의 애호가"></a>
+</div>
+
+<div class="menu">
+<ul>
+  <li>
+	projects by chances
+    <ul>
+      <li><a href="sin.html">a rapid sin</a></li>
+      <li><a href="junk.html">pieces of junk</a></li>
+      <li><a href="habitue.html">habitué</a></li>
+    </ul>
+  </li>
+
+  <li>
+	documenting some unusual days
+    <ul>
+      <li class=active-item><a href="190411.html">2019.04.11.</a></li>
+    </ul>
+  </li>
+  <li>
+        miscellaneous
+    <ul>
+      <li><a href="rand.html">random</a></li>
+      <li><a href="https://www.instagram.com/caglaz.one/">caglaz.one(ig)</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+<div id="content" class="nine columns"> 
+
+<div class="carousel" id="slider"> 
+  <div class="carousel-wrapper"> 
+    
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(1)"><img src="./items/190411/1.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(2)"><img src="./items/190411/2.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(3)"><img src="./items/190411/3.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(4)"><img src="./items/190411/4.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(5)"><img src="./items/190411/5.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(6)"><img src="./items/190411/6.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(7)"><img src="./items/190411/7.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(8)"><img src="./items/190411/8.jpg"></a>
+    </div>
+      </div>
+  <div class="navi-wrapper"></div>
+</div>
+
+<div class="notes"> 
+  <h3 class="title">"더 이상 낙태죄는 없다"(2019)
+</h3>
+  <h6 class="desc">2019년 4월 11일, 헌법재판소.
+형법 제 27장 "낙태의 죄"에 대한 판결 ― "제269조 제1항, 제270조 제1항 중 ‘의사’에 관한 부분은 모두 헌법에 합치되지 아니한다."
+</h6>
+</div>
+
+<script src="./carousel.min.js" type="text/javascript"></script>
+
+<script> new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 }); </script>
+
+<script> window.onresize = function() { 
+  new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 });
+  console.log('resized'); }; </script>
+  
+<script>
+  function lightbox(img) {
+  document.getElementById("lightboximg").style.backgroundImage='url(./items/190411/'+img+'.jpg)';
+  document.getElementById("lightbox").style.display='block';
+  }
+  function lightboxoff() {
+  document.getElementById("lightbox").style.display='none';
+  }
+</script>
+
+</div>
+</div>
+
+
+<div id="lightbox" class="lightbox">
+<a href="#" onClick="lightboxoff()"><div id="lightboximg"></div></a>
+</div>

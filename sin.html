@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>amateur de tout</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+
+
+<div class="container row">
+<div id="nav" class="three columns">
+<div class="logo">
+<a href="index.html"><img class="u-max-full-width" src="logo.jpg" alt="amateur de tout 모든 것의 애호가"></a>
+</div>
+
+<div class="menu">
+<ul>
+  <li>
+	projects by chances
+    <ul>
+      <li class=active-item><a href="sin.html">a rapid sin</a></li>
+      <li><a href="junk.html">pieces of junk</a></li>
+      <li><a href="habitue.html">habitué</a></li>
+    </ul>
+  </li>
+
+  <li>
+	documenting some unusual days
+    <ul>
+      <li><a href="190411.html">2019.04.11.</a></li>
+    </ul>
+  </li>
+  <li>
+        miscellaneous
+    <ul>
+      <li><a href="rand.html">random</a></li>
+      <li><a href="https://www.instagram.com/caglaz.one/">caglaz.one(ig)</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</div>
+<div id="content" class="nine columns"> 
+
+<div class="carousel" id="slider"> 
+  <div class="carousel-wrapper"> 
+    
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(1)"><img src="./items/sin/1.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(2)"><img src="./items/sin/2.jpg"></a>
+    </div>
+        <div class="carousel-item"> 
+      <a href="#" onClick="lightbox(3)"><img src="./items/sin/3.jpg"></a>
+    </div>
+      </div>
+  <div class="navi-wrapper"></div>
+</div>
+
+<div class="notes"> 
+  <h3 class="title">죄 빠른 침식 A Rapid Sin(2010)
+</h3>
+  <h6 class="desc">2010년 8월, 고속버스 트렁크에 자전거를 실었다. 나도 같은 버스에 탔다. 안동 터미널에 도착한 것은 저녁이었다. 자전거를 타고 안동댐으로 가서 텐트를 치고 하루를 묵었다. 이튿날, 자전거를 타고 강을 따라 달렸다. 강에서 가까운 도로를 탄 것이므로 강이 보이지 않는 시간도 많았다. 그날 밤은 ‘실천단 바람’이라는 이름으로 낙동강 순례를 하고 있던 친구들의 숙소에서 묵었다. 사흘째 되던 날에는 그 친구들과 함께 강을 돌았고, 오후에는 다시 홀로 자전거를 타고 움직였다. 밥을 먹지 못한 채 한참을 달리다 현기증에 기진맥진해질 무렵 차를 얻어 타고 시내로 가서 찜질방에서 하루를 잤다. 그곳에서였나, 태풍 소식을 접해 다음날에는 다시 버스에 자전거를 싣고 고향집으로 갔다. 태풍은 만 하루만에 걷힌 작은 것이었다. 고향집에서도 자전거를 타고 주남저수지를 찾았다.
+
+카메라는 두 대를 갖고 있었다. 메모리카드도 두 개였던 것 같다. 그렇게 찍은 사진을 컴퓨터로 옮기지도 않고 방치했는데, 너덜거리던 차였던 메모리카드가 말썽을 일으켰다. 사진이 읽히지 않았다. 그대로 또 한참을 방치했다 언젠가 다시 한 번 열어보니, 사진들은 이상한 모습으로 되돌아와 있었다. 주남저수지는 생태 습지로 나름 이름이 알려진 곳이다. 실은 대규모 토목 공사로 만들어진 그곳은, 그저 농업 용수 확보를 위해 만들어졌지만 뜻하지 않게 철새들이 찾는 곳이 되었다. 망가진 사진들은 뜻하지 않게 마음에 드는 모습이 되어 있었다.
+</h6>
+</div>
+
+<script src="./carousel.min.js" type="text/javascript"></script>
+
+<script> new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 }); </script>
+
+<script> window.onresize = function() { 
+  new Carousel(document.querySelector('#slider'), { CarouselMotion: 'default', naviPosition: 'top', naviStyle: 'dot', autoMove: false, autoMoveTime: 2000 });
+  console.log('resized'); }; </script>
+  
+<script>
+  function lightbox(img) {
+  document.getElementById("lightboximg").style.backgroundImage='url(./items/sin/'+img+'.jpg)';
+  document.getElementById("lightbox").style.display='block';
+  }
+  function lightboxoff() {
+  document.getElementById("lightbox").style.display='none';
+  }
+</script>
+
+</div>
+</div>
+
+
+<div id="lightbox" class="lightbox">
+<a href="#" onClick="lightboxoff()"><div id="lightboximg"></div></a>
+</div>
